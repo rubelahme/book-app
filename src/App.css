@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+.NavBar {
+  background-color: antiquewhite;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BookList {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu-1 {
+  padding-right: 50px !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.imgOne {
+  width: 120px;
 }
-
-.App-link {
-  color: #61dafb;
+.search:focus {
+  box-shadow: none;
+  border: 1px solid black;
+  border-radius: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 16px;
+  background-color: black;
+  color: whitesmoke;
+}
+.BookList h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.BookList h4 {
+  font-size: 17px;
+}
+.BookList h2 {
+  font-weight: 700;
 }
