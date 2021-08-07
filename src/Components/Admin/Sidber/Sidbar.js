@@ -10,9 +10,26 @@ const Sidebar = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     setName(data.exampleReq[0].name);
-    console.log(data);
+    const formData = new FormData();
+    formData.append("exampleReq", data.exampleReq[0]);
+    formData.append("example", data.example);
+    formData.append("exampleRequired", data.exampleRequired);
+    formData.append("exampleRequiredEnd", data.exampleRequiredEnd);
+
+    fetch("http://localhost:4000/add", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("rubel");
+      })
+      .catch((error) => {
+        console.error("ahmed");
+      });
   };
 
   return (
@@ -34,6 +51,7 @@ const Sidebar = () => {
                           class="form-control"
                           placeholder="name@example.com"
                           id="floatingInput"
+                          name="Name"
                           {...register("example", { required: true })}
                         />
                         <label for="floatingInput">Book Name</label>
@@ -47,6 +65,7 @@ const Sidebar = () => {
                           class="form-control"
                           placeholder="name@example.com"
                           id="floatingInputs"
+                          name="Author"
                           {...register("exampleRequired", { required: true })}
                         />
                         <label for="floatingInputs">Author Name</label>
@@ -61,6 +80,7 @@ const Sidebar = () => {
                           type="number"
                           class="form-control"
                           placeholder="name@example.com"
+                          name="Price"
                           id="floatingInputEnd"
                           {...register("exampleRequiredEnd", {
                             required: true,
@@ -74,9 +94,10 @@ const Sidebar = () => {
                     </div>
                     <div className="col-6">
                       <input
-                        type="file"
+                        type="File"
                         class="form-control d-none"
                         placeholder="name@example.com"
+                        name="file"
                         id="floating"
                         {...register("exampleReq", {
                           required: true,
