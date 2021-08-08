@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 const BookList = (props) => {
-  const { name, author, price, image, _id } = props.data;
+  const { name, author, price, img, _id } = props.data;
   let history = useHistory();
   function handleClick(e) {
     history.push(`/details/${e}`);
@@ -13,7 +13,7 @@ const BookList = (props) => {
       <div className="pb-3 shadow-lg p-3 mb-5 bg-body rounded">
         <img
           className="img-thumbnail pt-4 pe-5 ps-5 pb-4 bg-secondary"
-          src={`data:image/jpeg;base64,${image.img}`}
+          src={`http://localhost:4000/${img}`}
           alt=""
         />
         <h3>{name}</h3>
@@ -27,7 +27,7 @@ const BookList = (props) => {
               className="btn btn-success"
               onClick={() => handleClick(_id)}
             >
-              Buy Now
+              Details View
             </button>
           </div>
         </div>

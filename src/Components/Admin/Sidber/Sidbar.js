@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import imgOne from "../../../img/cloud-upload-outline 1.png";
+import swal from "sweetalert";
 
 const Sidebar = () => {
   const [name, setName] = useState("");
@@ -26,6 +27,12 @@ const Sidebar = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("rubel");
+        swal({
+          title: "Good job!",
+          text: "Add Your Book",
+          icon: "success",
+          button: "Upload",
+        });
       })
       .catch((error) => {
         console.error("ahmed");
